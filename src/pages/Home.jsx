@@ -45,12 +45,12 @@ function Home() {
 
       {/* Why Choose Us */}
       <section className="why-us">
-        <h2>Why Choose Hardware Hub?</h2>
+        <h2>Why Choose Alison & Sons Hardware?</h2>
         <div className="features-grid">
           <div className="feature">
             <span>🚚</span>
             <h3>Fast Delivery</h3>
-            <p>Same-day delivery within Nairobi</p>
+            <p>Same-day delivery within Naivasha</p>
           </div>
           <div className="feature">
             <span>💰</span>

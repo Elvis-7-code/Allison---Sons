@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CartIcon from '../Cart/CartIcon';
-import { getCartCount } from '../../../utils/cartUtils';
+import { getCartCount } from '../../utils/cartUtils';
 
 function Navbar() {
   const [cartCount, setCartCount] = useState(0);

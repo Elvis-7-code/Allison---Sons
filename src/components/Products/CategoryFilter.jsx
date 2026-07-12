@@ -1,5 +1,4 @@
-import React from 'react';
-import { categories } from '../../../data/products';
+import { categories } from '../../data/products';
 
 function CategoryFilter({ activeCategory, onCategoryChange }) {
   return (

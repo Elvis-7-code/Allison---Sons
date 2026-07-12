@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { addToCart } from '../../../utils/cartUtils';
+import { addToCart } from '../../utils/cartUtils';
 
 function ProductCard({ product }) {
   const [quantity, setQuantity] = useState(product.minOrder || 1);

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CartItem from './CartItem';
-import { getCart, getCartTotal, removeFromCart, updateQuantity } from '../../../utils/cartUtils';
+// ✅ CORRECT PATHS - going up 4 levels
+import { getCart, getCartTotal, removeFromCart, updateQuantity } from '../../utils/cartUtils';
 
 function CartSidebar({ onClose }) {
   const [cart, setCart] = useState([]);

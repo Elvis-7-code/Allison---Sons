@@ -1,29 +1,32 @@
-import React, { useState } from 'react';
-import ProductList from '../components/Products/ProductList';
-import CategoryFilter from '../components/Products/CategoryFilter';
-import { products } from '../data/products';
+import React, { useState, useEffect } from "react";
+import ProductCard from "../components/Products/ProductCard";
+import { getProductsByCategory } from "../data/products";
 
-function Products() {
-  const [activeCategory, setActiveCategory] = useState('all');
+function Products({ category }) {
+  const [products, setProducts] = useState([]);
 
-  const filteredProducts = activeCategory === 'all'
-    ? products
-    : products.filter(p => p.category === activeCategory);
+  useEffect(() => {
+    const filteredProducts = getProductsByCategory(category);
+    setProducts(filteredProducts);
+  }, [category]);
 
   return (
-    <div className="products-page">
-      <div className="page-header">
-        <h1>Our Products</h1>
-        <p>Quality construction materials for every project</p>
-      </div>
-
-      <CategoryFilter 
-        activeCategory={activeCategory} 
-        onCategoryChange={setActiveCategory} 
-      />
-
-      <ProductList products={filteredProducts} />
-    </div>
+    <section className="products-section">
+      {products.length === 0 ? (
+        <div className="no-products">
+          <p>No products found in this category.</p>
+        </div>
+      ) : (
+        <div className="products-grid">
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+            />
+          ))}
+        </div>
+      )}
+    </section>
   );
 }
 
